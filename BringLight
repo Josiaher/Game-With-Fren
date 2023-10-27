@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BringLight : MonoBehaviour
+{
+	private Rigidbody2D rb;
+	public Animator animator;
+	public GameObject TorchLight1;
+	public GameObject TorchLight2;
+	MOVE move;
+ // Update is called once per frame
+ void Update()
+ {
+     if(Input.GetKeyDown(KeyCode.T))
+    {
+		GetComponent<MOVE>().enabled = false;
+        animator.SetBool("TorchHold", true);
+		TorchLight1.SetActive(true);
+		TorchLight2.SetActive(true);
+    }
+    if(Input.GetKey(KeyCode.T))
+    {
+		GetComponent<MOVE>().enabled = false;
+        animator.SetBool("TorchHold", true);
+		TorchLight1.SetActive(true);
+		TorchLight2.SetActive(true);
+    }
+    if(Input.GetKeyUp(KeyCode.T))
+    {
+		GetComponent<MOVE>().enabled = true;
+        animator.SetBool("TorchHold", false);
+		TorchLight1.SetActive(false);
+		TorchLight2.SetActive(false);
+    }
+ }
+}
